@@ -77,12 +77,16 @@ where $U^T U=I, V^T V=I$; the columns of $U$ are orthonormal eigenvectors of $A 
 # Box-cox transformation
 
 Box-Cox transformation is a statistical method used to transform non-normally distributed data into approximately normally distributed data by applying a power transformation. 
+
+
 $$
 \begin{equation}
 y(\lambda)= \begin{cases}\frac{y^\lambda-1}{\lambda}, & \text { if } \lambda \neq 0 \\ \log y, & \text { if } \lambda=0\end{cases}
 \end{equation}
 $$
-Here, $y$ represents the original data, and $\lambda$​ is the transformation parameter that is determined empirically to find the best transformation that makes the data approximately normal. 
+
+
+Here, $y$ represents the original data, and $\lambda$​​ is the transformation parameter that is determined empirically to find the best transformation that makes the data approximately normal. 
 
 (Logarithms are essential in statistics because they simplify exponential and power curve relationships. By taking the natural logarithm of both sides of an exponential growth equation like $y = ae^{bx}$, it becomes $\log(y) = \log(a) + bx$, showing that the logarithm of $y$ is a linear function of $x$. Similarly, for a power curve equation $y = ax^b$, taking logarithms gives $\log(y) = \log(a) + b\log(x)$, indicating that the logarithm of $y$ is a linear function of the logarithm of $x$. )
 
