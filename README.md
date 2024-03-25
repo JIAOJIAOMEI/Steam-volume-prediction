@@ -1,16 +1,10 @@
-# summary
+# Summary
 The dataset for this project originates from a competition, comprising 2888 training samples and 1925 testing samples. It encompasses 37 features along with a target variable. My objective is to utilize various regression algorithms from the sklearn library to train different regression models. The models will predict outcomes for the test data, which will then be submitted to the competition website for evaluation. My best performance ranks above 200 out of over 10,000 participants.
-# some experience
+# Some experience
 
 - A few years ago, when I participated in this competition, I experimented with various data preprocessing techniques such as dimensionality reduction (PCA), normalization, and correlation analysis. I also explored different regression algorithms and compared their predictive results. **However, it wasn't until I began working with machine learning algorithms in real-world applications that I realized the true importance of the dataset.** In the process of collecting data, you need to have a deep understanding of the specific application, comprehend which factors are crucial and which may not be, and also understand what type of data is required for different algorithms, among other considerations. **In fact, if the dataset is good enough, many models are ready to produce effective results.**
 - Generally speaking, if the MSE on the training set and the MSE on the test set are approximately 95% similar, the model is considered okay. (Although irrelevant from this task.)
 - In a regression task, you typically have multiple features and a single numerical value as output. However, if you have multiple outputs, then you train a regressor for each output separately.
-
-# regressor comparison
-
-![regressor_comparison](regressor_comparison.png)
-
-This picture is modified based on [Matt Hall’s work](https://agilescientific.com/blog/2022/5/9/comparing-regressors).
 
 # Data preprocessing
 
@@ -82,7 +76,10 @@ where $U^T U=I, V^T V=I$; the columns of $U$ are orthonormal eigenvectors of $A 
 
 # Nonliner features
 
-[PolynomialFeatures](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.PolynomialFeatures.html): Generate a new feature matrix consisting of all polynomial combinations of the features with degree less than or equal to the specified degree. For example, if an input sample is two dimensional and of the form $[a, b]$, the degree-2 polynomial features are $[1, a, b, a^2, ab, b^2]$. This approach is valuable when it's challenging to increase the dimensionality of data directly and provides a way to extract more complex patterns from existing data.
+[PolynomialFeatures](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.PolynomialFeatures.html): Generate a new feature matrix consisting of all polynomial combinations of the features with degree less than or equal to the specified degree. For example, if an input sample is two dimensional and of the form $[a, b]$, the degree-2 polynomial features are $[1, a, b, a^2, ab, b^2]$​. This approach is valuable when it's challenging to increase the dimensionality of data directly and provides a way to extract more complex patterns from existing data.
 
-# Regression models
+# Regressor comparison
 
+![regressor_comparison](regressor_comparison.png)
+
+This picture is modified based on [Matt Hall’s work](https://agilescientific.com/blog/2022/5/9/comparing-regressors).
