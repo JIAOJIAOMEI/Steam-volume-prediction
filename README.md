@@ -1,9 +1,10 @@
 # summary
 The dataset for this project originates from a competition, comprising 2888 training samples and 1925 testing samples. It encompasses 37 features along with a target variable. My objective is to utilize various regression algorithms from the sklearn library to train different regression models. The models will predict outcomes for the test data, which will then be submitted to the competition website for evaluation. My best performance ranks above 200 out of over 10,000 participants.
 # some experience
-A few years ago, when I participated in this competition, I experimented with various data preprocessing techniques such as dimensionality reduction (PCA), normalization, and correlation analysis. I also explored different regression algorithms and compared their predictive results. **However, it wasn't until I began working with machine learning algorithms in real-world applications that I realized the true importance of the dataset.**
 
-In the process of collecting data, you need to have a deep understanding of the specific application, comprehend which factors are crucial and which may not be, and also understand what type of data is required for different algorithms, among other considerations. **In fact, if the dataset is good enough, many models are ready to produce effective results.**
+- A few years ago, when I participated in this competition, I experimented with various data preprocessing techniques such as dimensionality reduction (PCA), normalization, and correlation analysis. I also explored different regression algorithms and compared their predictive results. **However, it wasn't until I began working with machine learning algorithms in real-world applications that I realized the true importance of the dataset.** In the process of collecting data, you need to have a deep understanding of the specific application, comprehend which factors are crucial and which may not be, and also understand what type of data is required for different algorithms, among other considerations. **In fact, if the dataset is good enough, many models are ready to produce effective results.**
+- Generally speaking, if the MSE on the training set and the MSE on the test set are approximately 95% similar, the model is considered okay. (Although irrelevant from this task.)
+- In a regression task, you typically have multiple features and a single numerical value as output. However, if you have multiple outputs, then you train a regressor for each output separately.
 
 # regressor comparison
 
