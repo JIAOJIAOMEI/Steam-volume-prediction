@@ -10,4 +10,4 @@ The dataset for this project originates from a competition, comprising 2888 trai
 
 ![regressor_comparison](regressor_comparison.png)
 
-This code is modified based on [Matt Hall’s work](https://agilescientific.com/blog/2022/5/9/comparing-regressors).
+This picture is modified based on [Matt Hall’s work](https://agilescientific.com/blog/2022/5/9/comparing-regressors).
