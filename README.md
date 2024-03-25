@@ -11,3 +11,48 @@ The dataset for this project originates from a competition, comprising 2888 trai
 ![regressor_comparison](regressor_comparison.png)
 
 This picture is modified based on [Matt Hall’s work](https://agilescientific.com/blog/2022/5/9/comparing-regressors).
+
+# Data preprocessing
+
+## Pearson correlation coefficient
+
+$$
+\begin{equation}
+\begin{aligned}
+& r=\frac{\sum\left(x_i-\bar{x}\right)\left(y_i-\bar{y}\right)}{\sqrt{\sum\left(x_i-\bar{x}\right)^2 \sum\left(y_i-\bar{y}\right)^2}}
+\end{aligned}
+\end{equation}
+$$
+
+$r=$ correlation coefficient
+$x_i=$ values of the $\mathrm{x}$-variable in a sample
+$\bar{x}=$ mean of the values of the $\mathrm{x}$-variable
+$y_i=$ values of the $y$-variable in a sample
+$\bar{y}=$ mean of the values of the $y$-variable
+
+The Pearson correlation coefficient, ranging from -1 to 1, measures the strength and direction of the linear relationship between two variables: -1 indicates a perfect negative linear relationship, 1 indicates a perfect positive linear relationship, and 0 indicates no linear relationship.
+
+## Min-max normalization
+
+Min-max normalization, also known as feature scaling, linearly transforms the original data to ensure that all scaled values fall within the range of $(0,1)$.
+$$
+x_{\text {scaled }}=\frac{x-x_{\min }}{x_{\max }-x_{\min }}
+$$
+
+## Z-score normalization
+
+Z-score normalization, also known as standardization, transforms the original data distribution to have a mean of 0 and a standard deviation of 1.
+$$
+z_i=\frac{x_i-\mu}{\sigma}
+$$
+where:
+- $x_i$ is the original data point,
+- $\mu$ is the mean of $x$.
+- $\sigma$ is the standard deviation of $x$.
+
+Outliers are data points that fall more than 3 standard deviations away from the mean.
+
+## PCA
+
+
+
