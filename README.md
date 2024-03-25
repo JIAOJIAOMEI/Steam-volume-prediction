@@ -78,4 +78,11 @@ $$
 
 where $U^T U=I, V^T V=I$; the columns of $U$ are orthonormal eigenvectors of $A A^T$, the columns of $V$ are orthonormal eigenvectors of $A^T A$, and $S$ is a diagonal matrix containing the square roots of eigenvalues from $U$ or $V$ in descending order.
 
-**PCA involves selecting the leading components based on their corresponding eigenvalues in $S$.**
+**PCA involves selecting the leading components based on their corresponding eigenvalues in $S$​.**
+
+# Nonliner features
+
+[PolynomialFeatures](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.PolynomialFeatures.html): Generate a new feature matrix consisting of all polynomial combinations of the features with degree less than or equal to the specified degree. For example, if an input sample is two dimensional and of the form $[a, b]$, the degree-2 polynomial features are $[1, a, b, a^2, ab, b^2]$. This approach is valuable when it's challenging to increase the dimensionality of data directly and provides a way to extract more complex patterns from existing data.
+
+# Regression models
+
