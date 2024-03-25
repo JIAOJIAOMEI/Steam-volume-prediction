@@ -66,7 +66,16 @@ Outliers are data points that fall more than 3 standard deviations away from the
 
 ## PCA
 
+SVD is based on a theorem from linear algebra which says that a rectangular matrix $A$ can be broken down into the product of three matrices - an orthogonal matrix $U$, a diagonal matrix $S$, and the transpose of an orthogonal matrix $V$​. The theorem is usually presented something like this:
 
 
+$$
+\begin{equation}
+A_{m n}=U_{m m} S_{m n} V_{n n}^T
+\end{equation}
+$$
 
 
+where $U^T U=I, V^T V=I$; the columns of $U$ are orthonormal eigenvectors of $A A^T$, the columns of $V$ are orthonormal eigenvectors of $A^T A$, and $S$ is a diagonal matrix containing the square roots of eigenvalues from $U$ or $V$ in descending order.
+
+**PCA involves selecting the leading components based on their corresponding eigenvalues in $S$.**
