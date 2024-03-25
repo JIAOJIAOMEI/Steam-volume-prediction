@@ -4,3 +4,9 @@ The dataset for this project originates from a competition, comprising 2888 trai
 A few years ago, when I participated in this competition, I experimented with various data preprocessing techniques such as dimensionality reduction (PCA), normalization, and correlation analysis. I also explored different regression algorithms and compared their predictive results. **However, it wasn't until I began working with machine learning algorithms in real-world applications that I realized the true importance of the dataset.**
 
 In the process of collecting data, you need to have a deep understanding of the specific application, comprehend which factors are crucial and which may not be, and also understand what type of data is required for different algorithms, among other considerations. **In fact, if the dataset is good enough, many models are ready to produce effective results.**
+
+# regressor comparison
+
+![regressor_comparison](regressor_comparison.png)
+
+This code is modified based on [Matt Hall’s work](https://agilescientific.com/blog/2022/5/9/comparing-regressors).
