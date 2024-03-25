@@ -37,9 +37,7 @@ The Pearson correlation coefficient, ranging from -1 to 1, measures the strength
 Min-max normalization, also known as feature scaling, linearly transforms the original data to ensure that all scaled values fall within the range of $(0,1)$.
 $$
 \begin{equation}
-\begin{aligned}
 x_{\text {scaled }}=\frac{x-x_{\min }}{x_{\max }-x_{\min }}
-\end{aligned}
 \end{equation}
 $$
 
@@ -48,9 +46,7 @@ $$
 Z-score normalization, also known as standardization, transforms the original data distribution to have a mean of 0 and a standard deviation of 1.
 $$
 \begin{equation}
-\begin{aligned}
 z_i=\frac{x_i-\mu}{\sigma}
-\end{aligned}
 \end{equation}
 $$
 where:
