@@ -81,7 +81,7 @@ Box-Cox transformation is a statistical method used to transform non-normally di
 
 $$
 \begin{equation}
-y(\lambda)= \begin{cases}\frac{y^\lambda-1}{\lambda}, & \text { if } \lambda \neq 0 \\ \log y, & \text { if } \lambda=0\end{cases}
+y(\lambda)= \frac{y^\lambda-1}{\lambda} \text { if } \lambda \neq 0 \text { otherwise }\log y
 \end{equation}
 $$
 
