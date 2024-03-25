@@ -159,10 +159,9 @@ for ax_row, (dataname, (x, y)), (_, (x_, y_)) in zip(axs, datasets.items(), nois
         else:
             ax.set_yticklabels([])
 
-        ax.grid('off')
-
 plt.figtext(0.5, 1.0, 'Regressor Comparison', fontsize='xx-large', color='k', ha='center', va='bottom')
 plt.tight_layout()
+plt.grid(False)
 plt.savefig('regressor_comparison.pdf', dpi=300, bbox_inches='tight', pad_inches=0.1)
 plt.savefig('regressor_comparison.png', dpi=300, bbox_inches='tight', pad_inches=0.1)
 plt.show()
