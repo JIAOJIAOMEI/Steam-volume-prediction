@@ -3,6 +3,8 @@
 # @Software: PyCharm
 # @File    : Regressor Comparison.py
 
+# This picture is modified based on [Matt Hall’s work](https://agilescientific.com/blog/2022/5/9/comparing-regressors).
+
 from sklearn.linear_model import Ridge, HuberRegressor
 from sklearn.preprocessing import PolynomialFeatures
 from sklearn.neighbors import KNeighborsRegressor
@@ -23,7 +25,7 @@ def make_linear(N=50, noise=3, random_state=None, w=10, b=3):
 
     def f(x, w, b):
         return w * x + b
-
+    
     rng = np.random.default_rng(random_state)
     x = np.linspace(-2.5, 2.5, num=N) + rng.normal(0, noise / 10, N)
     y = f(x, w, b) + rng.normal(0, noise, N)
@@ -34,7 +36,7 @@ def make_noisy(N=50, noise=3, random_state=None):
     xa, ya = make_linear(N=N, noise=noise, random_state=random_state)
 
     rng = np.random.default_rng(random_state)
-
+    
     if noise:
         xn = np.linspace(-2.5, 2.5, num=N // 2)
         yn = 70 * (0.5 - rng.random(size=N // 2))
@@ -42,7 +44,7 @@ def make_noisy(N=50, noise=3, random_state=None):
         xb, yb = np.array(xy).T
     else:
         xb, yb = np.array([]), np.array([])
-
+    
     return np.vstack([xa, xb.reshape(-1, 1)]), np.hstack([ya, yb])
 
 
@@ -115,45 +117,45 @@ for ax_row, (dataname, (x, y)), (_, (x_, y_)) in zip(axs, datasets.items(), nois
             x_train, x_val, y_train, y_val = train_test_split(x_sig, y_sig, test_size=0.4, random_state=random_state)
             x_train = np.vstack([x_train, x_noise])
             y_train = np.hstack([y_train, y_noise])
-
+    
         # Plot the noise-free case.
         ax.plot(x_, y_, c='b', alpha=0.5, lw=3, label='Underlying model')
-
+    
         # Plot the training and validation data.
         ax.scatter(x_train, y_train, s=18, c='g', alpha=0.67, label='Train data')
         ax.scatter(x_val, y_val, s=18, c='r', alpha=0.33, label='Validate data')
         # ax.legend(loc='upper right', fontsize='small')
-
+    
         if (m := model.get('model')) is not None:
-
+    
             xm = np.linspace(-2.5, 2.5).reshape(-1, 1)
             if (pen := model.get('pen')) is not None:
                 m.set_params(**{pen: model['mi']})  # Min regularization.
             m.fit(x_train, y_train)
             ŷm = m.predict(xm)
             ax.plot(xm, ŷm, 'r', lw=2, alpha=0.6, label='Min regularization')
-
+    
             ŷ = m.predict(x_val)
             mscore = np.sqrt(mean_squared_error(y_val, ŷ))
             ax.text(0.8, -30, 'Validation RMSE: '+ f'{mscore:.2f}', c='r')
-
+    
         if (pen := model.get('pen')) is not None:
             m.set_params(**{pen: model['ma']})  # Max regularization.
             r = m.fit(x_train, y_train)
             ŷr = r.predict(xm)
             ax.plot(xm, ŷr, 'k', lw=2, alpha=0.6, label='Max regularization')
-
+    
             ŷ = r.predict(x_val)
             rscore = np.sqrt(mean_squared_error(y_val, ŷ))
             ax.text(0.8, -35, 'Validation RMSE: '+ f'{rscore:.2f}', c='k')
-
+    
         ax.set_ylim(-40, 40)
         ax.set_xlim(-3, 3)
         ax.legend(loc='upper right', fontsize='small')
-
+    
         if ax.get_subplotspec().is_first_row():
             ax.set_title(modelname)
-
+    
         if ax.get_subplotspec().is_first_col():
             ax.text(-2.75, 32, f'{dataname}', c='k', fontsize='x-large')
         else:
